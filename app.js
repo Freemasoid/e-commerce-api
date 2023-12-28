@@ -36,7 +36,8 @@ app.use(
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
-app.use(express.static("./public"));
+app.use(express.static("public"));
+app.use("uploads", express.static("uploads"));
 app.use(fileUpload());
 app.use(helmet());
 app.use(ExpressMongoSanitize());
