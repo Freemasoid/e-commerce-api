@@ -32,7 +32,7 @@ const getAllReviews = async (req, res) => {
     select: "name company price",
   });
 
-  res.status(StatusCodes.OK).json({ reviews, count: reviews.length });
+  res.status(StatusCodes.OK).json({ reviews });
 };
 
 const getSingleReview = async (req, res) => {
@@ -81,7 +81,7 @@ const deleteReview = async (req, res) => {
 const getSingleProductReviews = async (req, res) => {
   const { id: productId } = req.params;
   const reviews = await Review.find({ product: productId });
-  res.status(StatusCodes.OK).json({ reviews, count: reviews.length });
+  res.status(StatusCodes.OK).json({ reviews });
 };
 
 export {
