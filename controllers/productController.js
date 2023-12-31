@@ -1,4 +1,4 @@
-import Product from "../ models/Product.js";
+import Product from "../models/Product.js";
 import { StatusCodes } from "http-status-codes";
 import { BadRequestError, NotFoundError } from "../errors/custom-errors.js";
 import path from "path";

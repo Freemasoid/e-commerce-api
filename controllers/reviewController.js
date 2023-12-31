@@ -1,5 +1,5 @@
-import Review from "../ models/Review.js";
-import Product from "../ models/Product.js";
+import Review from "../models/Review.js";
+import Product from "../models/Product.js";
 import { StatusCodes } from "http-status-codes";
 import checkPermit from "../utils/checkPermit.js";
 import { BadRequestError, NotFoundError } from "../errors/custom-errors.js";
