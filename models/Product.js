@@ -22,7 +22,6 @@ const ProductSchema = new mongoose.Schema(
       {
         url: String,
         filename: String,
-        type: "image/jpeg",
       },
     ],
     category: {
