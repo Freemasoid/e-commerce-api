@@ -1,5 +1,5 @@
-import Order from "../ models/Order.js";
-import Product from "../ models/Product.js";
+import Order from "../models/Order.js";
+import Product from "../models/Product.js";
 import { StatusCodes } from "http-status-codes";
 import { BadRequestError, NotFoundError } from "../errors/custom-errors.js";
 import checkPermit from "../utils/checkPermit.js";
