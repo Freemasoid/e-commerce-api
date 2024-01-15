@@ -2,8 +2,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "SonicForge",
-    name: "ThunderStrum",
-    price: 249900,
+    name: "Thunderstrum",
+    price: 149900,
     description:
       "Unleash the thunder with the ThunderStrum! This high-performance electric guitar is crafted for power and precision, delivering explosive riffs and searing solos.",
     colors: ["#000000", "#ff0000", "#ffffff"],
@@ -34,7 +34,7 @@ export const mockData = [
   {
     category: "guitar",
     company: "FretCrafted",
-    name: "HarmonyHero",
+    name: "Harmony Hero",
     price: 189900,
     description:
       "Dive into musical harmony with the HarmonyHero. This handcrafted acoustic guitar resonates warmth and richness, creating melodies that captivate the soul.",
@@ -66,8 +66,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "AmpedArtistry",
-    name: "BassBoom",
-    price: 329900,
+    name: "Bass Boom",
+    price: 129900,
     description:
       "Feel the rumble with the BassBoom! This custom bass guitar delivers deep, punchy tones, perfect for laying down the foundation of your rhythm section.",
     colors: ["#2e8b57", "#9932cc", "#ffd700", "#00ced1"],
@@ -98,8 +98,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "StrumCraft",
-    name: "VintageVirtuoso",
-    price: 279900,
+    name: "Vintage Virtuoso",
+    price: 179900,
     description:
       "Embrace the vintage vibe with the VintageVirtuoso. Meticulously restored, this classic guitar exudes timeless charm while delivering impeccable sound and playability.",
     colors: ["#8b4513", "#a0522d", "#00ced1"],
@@ -130,8 +130,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "MetalizeGuitars",
-    name: "ShredMaster",
-    price: 269900,
+    name: "Shred Master",
+    price: 169900,
     description:
       "Unleash the shredder within with the ShredMaster! This metal-style custom guitar is built for speed and precision, empowering you to dominate the stage.",
     colors: ["#000000", "#696969"],
@@ -162,8 +162,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "SonicForge",
-    name: "PhoenixFire",
-    price: 299900,
+    name: "Phoenix Fire",
+    price: 199900,
     description:
       "Rise from the ashes with the PhoenixFire! This electric guitar ignites the stage with blazing tones, combining style and power for an unforgettable performance.",
     colors: ["#ff4500", "#ffd700", "#000000"],
@@ -194,8 +194,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "FretCrafted",
-    name: "SerenadeSculpt",
-    price: 209900,
+    name: "Serenade Sculpt",
+    price: 109900,
     description:
       "Crafted for enchanting melodies, the SerenadeSculpt acoustic guitar captivates with its sculpted design and harmonious resonance. Elevate your acoustic journey.",
     colors: ["#8b4513", "#ffffff"],
@@ -226,8 +226,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "AmpedArtistry",
-    name: "RhythmRover",
-    price: 239900,
+    name: "Rhythm Rover",
+    price: 139900,
     description:
       "Navigate the rhythm landscape with the RhythmRover! This custom bass guitar offers a versatile sonic journey, ensuring a solid foundation for any musical expedition.",
     colors: ["#008000", "#4169e1", "#ffd700"],
@@ -258,7 +258,7 @@ export const mockData = [
   {
     category: "guitar",
     company: "StrumCraft",
-    name: "HarmonicHue",
+    name: "Harmonic Hue",
     price: 189900,
     description:
       "Dive into a symphony of color with the HarmonicHue. This vibrant acoustic guitar not only enchants the ears but also captivates the eyes with its stunning aesthetics.",
@@ -289,8 +289,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "MetalizeGuitars",
-    name: "RiffReaper",
-    price: 259900,
+    name: "Riff Reaper",
+    price: 159900,
     description:
       "Summon the heavy with the RiffReaper! This metal-style custom guitar is forged for earth-shattering riffs, ensuring your sonic presence dominates the metal realm.",
     colors: ["#000000", "#ff4500", "#696969"],
@@ -320,8 +320,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "SonicForge",
-    name: "EclipseEcho",
-    price: 309900,
+    name: "Eclipse Echo",
+    price: 109900,
     description:
       "Experience a sonic eclipse with the EclipseEcho! This electric guitar eclipses boundaries, delivering a fusion of power, precision, and ethereal resonance for an unparalleled performance.",
     colors: ["#000000", "#000080", "#ffffff"],
@@ -351,8 +351,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "FretCrafted",
-    name: "MelodyMajesty",
-    price: 229900,
+    name: "Melody Majesty",
+    price: 129900,
     description:
       "Embrace the regal tones of the MelodyMajesty. This handcrafted acoustic guitar reigns with majestic sound, inviting you to orchestrate melodic symphonies with every strum.",
     colors: ["#8b4513", "#ffffff"],
@@ -382,8 +382,8 @@ export const mockData = [
   {
     category: "guitar",
     company: "AmpedArtistry",
-    name: "BassBlitz",
-    price: 349900,
+    name: "Bass Blitz",
+    price: 149900,
     description:
       "Ignite the bass revolution with the BassBlitz! This custom bass guitar unleashes a blitz of low-end thunder, ensuring your basslines resonate with unmatched power and precision.",
     colors: ["#2e8b57", "#9932cc", "#ffd700", "#20b2aa"],
@@ -413,7 +413,7 @@ export const mockData = [
   {
     category: "guitar",
     company: "StrumCraft",
-    name: "RetroResonance",
+    name: "Retro Resonance",
     price: 199900,
     description:
       "Revive the classics with the RetroResonance. This vintage-inspired guitar combines nostalgic design with modern playability, delivering timeless resonance for an authentic musical journey.",

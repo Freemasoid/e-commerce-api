@@ -3,11 +3,9 @@ import Product from "../models/Product.js";
 import { StatusCodes } from "http-status-codes";
 import { BadRequestError, NotFoundError } from "../errors/custom-errors.js";
 import checkPermit from "../utils/checkPermit.js";
+import Stripe from "stripe";
 
-const fakeStripeAPI = async ({ amount, currency }) => {
-  const client_secret = "someRandValue";
-  return { client_secret, amount };
-};
+const stripeInst = Stripe(process.env.STRIPE_TEST_KEY);
 
 const getAllOrders = async (req, res) => {
   const orders = await Order.find({});
@@ -62,10 +60,12 @@ const createOrder = async (req, res) => {
     orderItems = [...orderItems, singleOrderItem];
     subtotal += item.amount * price;
   }
+
   const total = tax + shippingFee + subtotal;
-  const paymentIntent = await fakeStripeAPI({
+
+  const paymentIntent = await stripeInst.paymentIntents.create({
     amount: total,
-    currency: "usd",
+    currency: "eur",
   });
 
   const order = await Order.create({
