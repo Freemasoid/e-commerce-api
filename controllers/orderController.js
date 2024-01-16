@@ -78,7 +78,7 @@ const createOrder = async (req, res) => {
     user: req.user.userId,
   });
 
-  req.status(StatusCodes.CREATED).json({ order, clientSecret: order.clientSecret });
+  res.status(StatusCodes.CREATED).json({ order, clientSecret: order.clientSecret });
 };
 
 const updateOrder = async (req, res) => {
