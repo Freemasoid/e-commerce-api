@@ -41,10 +41,10 @@ const createOrder = async (req, res) => {
   let shippingFee = 0;
 
   for (const item of cartItems) {
-    const dbProduct = await Product.findOne({ _id: item.product });
+    const dbProduct = await Product.findOne({ _id: item._id });
 
     if (!dbProduct) {
-      throw new NotFoundError(`No product with id: ${item.product}`);
+      throw new NotFoundError(`No product with id: ${item._id}`);
     }
 
     const { name, price, image, _id, freeShipping } = dbProduct;
@@ -53,7 +53,7 @@ const createOrder = async (req, res) => {
       name,
       price,
       image,
-      product: _id,
+      _id,
       freeShipping,
     };
 
