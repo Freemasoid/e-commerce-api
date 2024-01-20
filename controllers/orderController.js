@@ -30,17 +30,15 @@ const getCurrUserOrders = async (req, res) => {
 };
 
 const createOrder = async (req, res) => {
-  const { items: cartItems, tax, shippingFee } = req.body;
+  const { items: cartItems } = req.body;
 
   if (!cartItems || cartItems.length < 1) {
     throw new BadRequestError("No cart items provided");
   }
-  if (!tax || !shippingFee) {
-    throw new BadRequestError("Please provide tax and shipping fee");
-  }
 
   let orderItems = [];
   let subtotal = 0;
+  let shippingFee = 0;
 
   for (const item of cartItems) {
     const dbProduct = await Product.findOne({ _id: item.product });
@@ -49,18 +47,21 @@ const createOrder = async (req, res) => {
       throw new NotFoundError(`No product with id: ${item.product}`);
     }
 
-    const { name, price, image, _id } = dbProduct;
+    const { name, price, image, _id, freeShipping } = dbProduct;
     const singleOrderItem = {
       amount: item.amount,
       name,
       price,
       image,
       product: _id,
+      freeShipping,
     };
+
+    if (singleOrderItem.freeShipping) shippingFee = 10000;
     orderItems = [...orderItems, singleOrderItem];
     subtotal += item.amount * price;
   }
-
+  const tax = Math.ceil(subtotal * 0.05);
   const total = tax + shippingFee + subtotal;
 
   const paymentIntent = await stripeInst.paymentIntents.create({
