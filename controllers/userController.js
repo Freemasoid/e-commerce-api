@@ -20,7 +20,15 @@ const getSingleUser = async (req, res) => {
     throw new NotFoundError(`No user with id: ${req.params.id}`);
   }
   checkPermit(req.user, user._id);
-  res.status(StatusCodes.OK).json({ user });
+  res.status(StatusCodes.OK).json({
+    user: {
+      email: user.email,
+      lastName: user.lastName,
+      location: user.location,
+      name: user.name,
+      userId: user._id,
+    },
+  });
 };
 
 const showCurrentUser = async (req, res) => {
