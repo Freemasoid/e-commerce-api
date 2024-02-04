@@ -3,9 +3,6 @@ import Product from "../models/Product.js";
 import { StatusCodes } from "http-status-codes";
 import { BadRequestError, NotFoundError } from "../errors/custom-errors.js";
 import checkPermit from "../utils/checkPermit.js";
-import Stripe from "stripe";
-
-const stripeInst = Stripe(process.env.STRIPE_TEST_KEY);
 
 const getAllOrders = async (req, res) => {
   const orders = await Order.find({});
@@ -30,7 +27,7 @@ const getCurrUserOrders = async (req, res) => {
 };
 
 const createOrder = async (req, res) => {
-  const { items: cartItems } = req.body;
+  const { cartItems } = req.body;
 
   if (!cartItems || cartItems.length < 1) {
     throw new BadRequestError("No cart items provided");
@@ -64,22 +61,16 @@ const createOrder = async (req, res) => {
   const tax = Math.ceil(subtotal * 0.05);
   const total = tax + shippingFee + subtotal;
 
-  const paymentIntent = await stripeInst.paymentIntents.create({
-    amount: total,
-    currency: "eur",
-  });
-
   const order = await Order.create({
     orderItems,
     total,
     subtotal,
     tax,
     shippingFee,
-    clientSecret: paymentIntent.client_secret,
     user: req.user.userId,
   });
 
-  res.status(StatusCodes.CREATED).json({ order, clientSecret: order.clientSecret });
+  res.status(StatusCodes.CREATED).json({ order });
 };
 
 const updateOrder = async (req, res) => {

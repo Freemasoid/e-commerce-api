@@ -31,9 +31,6 @@ const OrderSchema = new mongoose.Schema(
       required: true,
     },
     orderItems: [SingleOrderItemSchema],
-    status: {
-      type: String,
-    },
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",
