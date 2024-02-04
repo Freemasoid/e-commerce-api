@@ -5,14 +5,14 @@ import { attachCookiesToResponse } from "../utils/jwt.js";
 import createTokenUser from "../utils/createTokenUser.js";
 
 const register = async (req, res) => {
-  const { email, name, password } = req.body;
+  const { email, name, lastName, password } = req.body;
   const emailExists = await User.findOne({ email });
 
   if (emailExists) {
     throw new BadRequestError("Email already exists");
   }
 
-  const user = await User.create({ name, email, password });
+  const user = await User.create({ name, email, lastName, password });
   const tokenUser = createTokenUser(user);
 
   attachCookiesToResponse({ res, user: tokenUser });
