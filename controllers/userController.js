@@ -23,7 +23,7 @@ const getSingleUser = async (req, res) => {
   res.status(StatusCodes.OK).json({
     user: {
       email: user.email,
-      lastName: user.lastName,
+      surname: user.surname,
       location: user.location,
       name: user.name,
       userId: user._id,
@@ -36,13 +36,14 @@ const showCurrentUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  const { email, name } = req.body;
+  const { email, name, surname } = req.body;
   if (!email || !name) {
     throw new BadRequestError("Please provide all values");
   }
   const user = await User.findOne({ _id: req.user.userId });
   user.email = email;
   user.name = name;
+  user.surname = surname;
 
   await user.save();
 
