@@ -17,8 +17,10 @@ import { reviewRouter } from "./routes/reviewRoutes.js";
 import { orderRouter } from "./routes/orderRoutes.js";
 
 let corsOptions = {
-  origin: "*",
+  origin: ["http://localhost:5173", "https://e-commerce-api-3xet.onrender.com/api/v1"],
   optionSuccessStatus: 200,
+  credentials: true,
+  exposedHeaders: ["set-cookie"],
 };
 
 const app = express();
