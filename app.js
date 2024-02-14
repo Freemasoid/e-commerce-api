@@ -17,7 +17,7 @@ import { reviewRouter } from "./routes/reviewRoutes.js";
 import { orderRouter } from "./routes/orderRoutes.js";
 
 let corsOptions = {
-  origin: "*",
+  origin: true,
   optionSuccessStatus: 200,
   credentials: true,
   exposedHeaders: ["set-cookie"],
