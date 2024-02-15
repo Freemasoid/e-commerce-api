@@ -21,6 +21,13 @@ let corsOptions = {
   optionSuccessStatus: 200,
   credentials: true,
   exposedHeaders: ["set-cookie"],
+    allowedHeaders: [
+    "Content-Type",
+    "Access-Control-Allow-Headers",
+    "Access-Control-Allow-Origin",
+    "Authorization",
+  ],
+  prefilghtContinue: true,
 };
 
 const app = express();
@@ -33,9 +40,18 @@ app.use(
   })
 );
 
-app.use(cors(corsOptions));
-app.use(express.json());
+app.use(session({
+    cookie: {
+        secure: true,
+        httpOnly: true,
+        sameSite: 'none',
+    },
+}));
+
 app.use(cookieParser(process.env.JWT_SECRET));
+app.use(cors(corsOptions));
+
+app.use(express.json());
 app.use(express.static("public"));
 app.use("uploads", express.static("uploads"));
 app.use(fileUpload());
