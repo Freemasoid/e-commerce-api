@@ -17,7 +17,7 @@ import { reviewRouter } from "./routes/reviewRoutes.js";
 import { orderRouter } from "./routes/orderRoutes.js";
 
 let corsOptions = {
-  origin: true,
+  origin: ["https://metal-zone-mern.netlify.app", "http://localhost:5173"],
   optionSuccessStatus: 200,
   credentials: true,
   exposedHeaders: ["set-cookie"],
