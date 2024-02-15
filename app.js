@@ -52,6 +52,7 @@ app.use(
   })
 );
 
+app.use(cookieParser(process.env.JWT_SECRET));
 app.use(session(sessionConfig));
 app.use(cors(corsOptions));
 
