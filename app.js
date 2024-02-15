@@ -15,6 +15,7 @@ import { prodRouter } from "./routes/productRoutes.js";
 import fileUpload from "express-fileupload";
 import { reviewRouter } from "./routes/reviewRoutes.js";
 import { orderRouter } from "./routes/orderRoutes.js";
+import session from "express-session";
 
 let corsOptions = {
   origin: ["https://metal-zone-mern.netlify.app", "http://localhost:5173"],
@@ -30,6 +31,17 @@ let corsOptions = {
   prefilghtContinue: true,
 };
 
+let sessionConfig = {
+  secret: process.env.JWT_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie : {
+    sameSite: 'none',
+    secure: true,
+     maxAge: 60 * 60 * 24 * 1000,
+  }
+};
+
 const app = express();
 
 app.set("trust proxy", 1);
@@ -40,15 +52,7 @@ app.use(
   })
 );
 
-app.use(session({
-    cookie: {
-        secure: true,
-        httpOnly: true,
-        sameSite: 'none',
-    },
-}));
-
-app.use(cookieParser(process.env.JWT_SECRET));
+app.use(session(sessionConfig));
 app.use(cors(corsOptions));
 
 app.use(express.json());
