@@ -44,14 +44,15 @@ const createOrder = async (req, res) => {
       throw new NotFoundError(`No product with id: ${item._id}`);
     }
 
-    const { name, price, image, _id, freeShipping } = dbProduct;
+    const { name, price, _id, freeShipping } = dbProduct;
     const singleOrderItem = {
       amount: item.amount,
       name,
       price,
-      image,
+      image: item.image,
       _id,
       freeShipping,
+      color: item.color,
     };
 
     if (singleOrderItem.freeShipping) shippingFee = 10000;
